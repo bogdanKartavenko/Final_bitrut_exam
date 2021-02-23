@@ -68,21 +68,27 @@ export default {
     width: 100%;
   }
   &__images-bkg {
+    @include media($screen-tablet) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100vh;
+    }
     position: absolute;
     right: 0;
     top: 0;
-    height: 100vh;
+    height: 70vh;
   }
   &__nav {
-    @include media ($screen-tablet) {
- display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1030px;
-    margin-top: 20px;
-    position: absolute;
+    @include media($screen-tablet) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 1030px;
+      margin-top: 20px;
+      position: absolute;
     }
-display: none;
+    display: none;
   }
   &__wrapper-menu {
     background: transparent;
@@ -128,31 +134,30 @@ display: none;
     }
   }
   &__wrapper {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       width: 100%;
-    max-width: 952px;
+      max-width: 952px;
       margin-top: 200px;
-    position: absolute;
+      position: absolute;
     }
     margin-top: 100px;
     position: absolute;
     width: 90%;
     max-width: 952px;
-
   }
   &__box {
     max-width: 504px;
   }
   &__subtitle {
-    @include media ($screen-tablet) {
-       max-width: 504px;
-    font-size: 36px;
-    line-height: 49px;
-    margin-bottom: 10px;
-    color: #3e3f43;
-    &--bold {
-      font-weight: bold;
-    }
+    @include media($screen-tablet) {
+      max-width: 504px;
+      font-size: 36px;
+      line-height: 49px;
+      margin-bottom: 10px;
+      color: #3e3f43;
+      &--bold {
+        font-weight: bold;
+      }
     }
     max-width: 504px;
     font-size: 26px;
@@ -164,11 +169,11 @@ display: none;
     }
   }
   &__title {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       font-weight: bold;
-    font-size: 72px;
-    line-height: 98px;
-    margin-bottom: 10px;
+      font-size: 72px;
+      line-height: 98px;
+      margin-bottom: 10px;
     }
     font-weight: bold;
     font-size: 54px;
@@ -176,10 +181,10 @@ display: none;
     margin-bottom: 10px;
   }
   &__button {
-     @include media ($screen-tablet) {
-       width: 175px;
-       margin: 0;
-     }
+    @include media($screen-tablet) {
+      width: 175px;
+      margin: 0;
+    }
     width: 175px;
     margin: 0 auto;
   }

@@ -26,7 +26,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin-top: 120px;
   &__caption {
     height: 98px;
