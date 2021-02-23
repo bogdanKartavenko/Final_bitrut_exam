@@ -74,12 +74,15 @@ export default {
     height: 100vh;
   }
   &__nav {
-    display: flex;
+    @include media ($screen-tablet) {
+ display: flex;
     justify-content: space-around;
     align-items: center;
     width: 1030px;
     margin-top: 20px;
     position: absolute;
+    }
+display: none;
   }
   &__wrapper-menu {
     background: transparent;
@@ -125,23 +128,34 @@ export default {
     }
   }
   &__wrapper {
-    width: 60%;
-    height: 376px;
-    margin-top: 200px;
-    position: absolute;
-    width: 100%;
+    @include media ($screen-tablet) {
+      width: 100%;
     max-width: 952px;
+      margin-top: 200px;
+    position: absolute;
+    }
+    margin-top: 100px;
+    position: absolute;
+    width: 90%;
+    max-width: 952px;
+
   }
   &__box {
     max-width: 504px;
-    height: 376px;
   }
   &__subtitle {
-    max-width: 504px;
-    // height: 98px;
-    font-style: normal;
-    font-weight: normal;
+    @include media ($screen-tablet) {
+       max-width: 504px;
     font-size: 36px;
+    line-height: 49px;
+    margin-bottom: 10px;
+    color: #3e3f43;
+    &--bold {
+      font-weight: bold;
+    }
+    }
+    max-width: 504px;
+    font-size: 26px;
     line-height: 49px;
     margin-bottom: 10px;
     color: #3e3f43;
@@ -150,14 +164,24 @@ export default {
     }
   }
   &__title {
-    font-style: normal;
-    font-weight: bold;
+    @include media ($screen-tablet) {
+      font-weight: bold;
     font-size: 72px;
+    line-height: 98px;
+    margin-bottom: 10px;
+    }
+    font-weight: bold;
+    font-size: 54px;
     line-height: 98px;
     margin-bottom: 10px;
   }
   &__button {
+     @include media ($screen-tablet) {
+       width: 175px;
+       margin: 0;
+     }
     width: 175px;
+    margin: 0 auto;
   }
 }
 .popup {
