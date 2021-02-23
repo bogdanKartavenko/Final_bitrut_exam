@@ -23,7 +23,7 @@ name: "AppStar"
 .rating-area {
 	overflow: hidden;
 	width: 136px;
-	margin: 0 auto;
+	margin: 0 ;
 }
 .rating-area:not(:checked) > input {
 	display: none;

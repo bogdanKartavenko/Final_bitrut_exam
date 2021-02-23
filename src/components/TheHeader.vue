@@ -1,10 +1,12 @@
 <template>
   <header class="header">
-    <img
-      class="header__images-bkg"
-      src="@/assets/images/header.png"
-      alt="logo"
-    />
+    <div class="header__wrapper-img">
+      <img
+        class="header__images-bkg"
+        src="@/assets/images/header.png"
+        alt="logo"
+      />
+    </div>
     <nav class="header__nav">
       <AppLogo></AppLogo>
       <div class="header__wrapper-menu">
@@ -24,9 +26,7 @@
           Are you lookong for <a class="header__subtitle--bold">woodden</a>
           <a class="header__subtitle--bold">furniture</a> for your place?
         </div>
-        <div class="header__title">
-          This is the Right Place
-        </div>
+        <div class="header__title">This is the Right Place</div>
         <AppButton class="header__button">Explore Furniture</AppButton>
       </div>
     </div>
@@ -45,14 +45,13 @@
 </template>
 
 <script>
-
 import AppButton from "./common/AppButton.vue";
 import AppLogo from "./common/AppLogo.vue";
 
 export default {
   components: {
     AppButton,
-AppLogo,
+    AppLogo,
   },
   name: "TheHeader",
 };
@@ -61,9 +60,13 @@ AppLogo,
 <style lang="scss">
 .header {
   color: #3e3f43;
-  @include flex ( flex-start, center, column);
+  @include flex(flex-start, center, column);
   width: 100%;
   min-height: 100vh;
+  &__wrapper-img {
+    position: relative;
+    width: 100%;
+  }
   &__images-bkg {
     position: absolute;
     right: 0;
@@ -126,7 +129,7 @@ AppLogo,
     height: 376px;
     margin-top: 200px;
     position: absolute;
-     width: 100%;
+    width: 100%;
     max-width: 952px;
   }
   &__box {
