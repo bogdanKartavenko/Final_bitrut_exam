@@ -11,14 +11,17 @@
         :align="card.align"
       />
     </ul>
+    <app-slider></app-slider>
   </div>
 </template>
 
 <script>
 import AppCard from "@/components/common/AppCard.vue";
 import AppTitle from "@/components/common/AppTitle.vue";
+import AppSlider from "../common/AppSlider.vue";
+
 export default {
-  components: { AppTitle, AppCard },
+  components: { AppTitle, AppCard, AppSlider },
   name: "AppCategories",
   data() {
     return {
@@ -62,12 +65,16 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
+
   &__card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 952px;
+    @include media($screen-tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 952px;
+    }
+    display: none;
   }
 }
 </style>

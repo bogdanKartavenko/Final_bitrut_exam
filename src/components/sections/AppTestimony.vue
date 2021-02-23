@@ -66,10 +66,16 @@ export default {
   align-items: center;
   width: 100%;
   &__wrapper {
-    width: 100%;
+    @include media ($screen-tablet) {
+      width: 100%;
     max-width: 952px;
     margin-top: 40px;
     @include flex(space-between);
+    }
+    width: 100%;
+    max-width: 952px;
+    margin-top: 40px;
+    @include flex(space-between, stretch, row, wrap);
   }
   &__wrapper_img {
     @include flex(space-between);

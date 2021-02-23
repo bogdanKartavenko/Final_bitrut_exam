@@ -77,7 +77,7 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
-    height: 70vh;
+    height: 60vh;
   }
   &__nav {
     @include media($screen-tablet) {
@@ -146,6 +146,15 @@ export default {
     max-width: 952px;
   }
   &__box {
+    @include media ($screen-tablet) {
+      max-width: 504px;
+      display: flex;
+    flex-direction: column;
+    text-align: start;
+    }
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     max-width: 504px;
   }
   &__subtitle {

@@ -60,47 +60,101 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 0 24px;
-  height: 1072px;
+  min-height: 1072px;
   &__img-top {
-    width: 426px;
-    height: 388px;
+    @include media($screen-tablet) {
+      max-width: 426px;
+      max-height: 388px;
+    }
+    max-width: 320px;
+    max-height: 388px;
   }
   &__img-bot {
-    position: absolute;
-    right: -160px;
-    bottom: 0;
-    width: 287px;
-    height: 384px;
+    @include media($screen-tablet) {
+      position: absolute;
+      right: -160px;
+      bottom: 0;
+      max-width: 287px;
+      max-height: 384px;
+    }
+
+    position: static;
+    max-width: 287px;
+    max-height: 384px;
   }
   &__img {
     position: absolute;
-    width: 314px;
-    height: 382px;
+    max-width: 314px;
+    max-height: 382px;
     bottom: -240px;
     left: -110px;
   }
   &__box-top {
+    @include media($screen-tablet) {
+      position: relative;
+      width: 100%;
+      max-width: 952px;
+      margin: 40px 0;
+      display: flex;
+      align-items: center;
+    }
     position: relative;
     width: 100%;
     max-width: 952px;
     margin: 40px 0;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   &__box-bottom {
+    @include media($screen-tablet) {
+      position: relative;
+      width: 100%;
+      max-width: 952px;
+      height: 384px;
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
     position: relative;
     width: 100%;
     max-width: 952px;
     height: 384px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
   }
   &__wrapper-top {
+    @include media($screen-tablet) {
+      max-width: 448px;
+      min-height: 180px;
+      margin-left: 78px;
+      margin-top: 0px;
+      display: flex;
+      text-align: start;
+    }
+    display: flex;
+    text-align: center;
+    flex-direction: column;
     max-width: 448px;
-    height: 180px;
-    margin-left: 78px;
+    min-height: 180px;
+    margin-top: 10px;
+    margin-left: 0px;
   }
   &__wrapper-bottom {
+    @include media($screen-tablet) {
+      position: relative;
+      max-width: 648px;
+      height: 131px;
+      display: flex;
+      text-align: start;
+    }
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
     max-width: 648px;
     height: 131px;
   }

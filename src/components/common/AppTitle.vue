@@ -22,7 +22,7 @@ export default {
 .title {
   width: 100%;
   max-width: 952px;
-  height: 98px;
+  min-height: 98px;
   display: flex;
   justify-content: center;
   align-items: center;

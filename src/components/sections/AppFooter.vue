@@ -87,10 +87,18 @@ export default {
   background-image: url("../../assets/images/footer.png") ;
   background-size: cover;
   &__wrapper_email {
-    width: 100%;
+    @include media ($screen-tablet) {
+      width: 100%;
     max-width: 952px;
     margin: 53px 0 86px 0;
     @include flex(space-between);
+    }
+    width: 100%;
+    max-width: 952px;
+    margin: 53px 10px 86px 10px;
+    display: flex;
+    flex-wrap: wrap;
+
   }
   &__wrapper_title {
     max-width: 493px;
@@ -125,7 +133,7 @@ export default {
     max-width: 941px;
   }
   &__input {
-    width: 328px;
+    max-width: 328px;
     height: 40px;
     border: 1px solid #daa520;
     font-size: 16px;
@@ -156,7 +164,7 @@ export default {
   }
   &__wrapper_text {
     @include flex(space-between);
-    width: 708px;
+    max-width: 708px;
     border-top: 0.5px solid;
   }
   &__list_logo {
