@@ -75,10 +75,11 @@ export default {
     justify-content: center;
     text-align: center;
     margin: 20px auto;
-    transition: 0.2s;
+    animation-name: nav ;
+
   }
   &__button {
-    background-color: #3e3f43;
+    
     // z-index: 1020;
     cursor: pointer;
     @include size(30px);
@@ -114,5 +115,13 @@ export default {
       transform: rotate(-45deg) translateX(7px) translateY(-10px);
     }
   }
+  @keyframes nav {
+  0% {
+    left: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
 }
 </style>
