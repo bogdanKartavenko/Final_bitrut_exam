@@ -1,14 +1,16 @@
 <template>
   <div class="nav">
-    <app-logo></app-logo>
-    <button @click="visible = !visible" v- class="nav__button">
-      <span class="nav__button-lines first"></span>
-      <span class="nav__button-lines second"></span>
-      <span class="nav__button-lines third"></span>
-    </button>
+    <div class="nav__wrapper">
+      <app-logo class="nav__logo"></app-logo>
+      <button @click="visible = !visible" v- class="nav__button">
+        <span class="nav__button-lines first"></span>
+        <span class="nav__button-lines second"></span>
+        <span class="nav__button-lines third"></span>
+      </button>
+    </div>
     <div v-show="visible" class="nav__box">
       <nav class="nav__navigation">
-        <ul>
+        <ul class="nav__list">
           <li>
             <a href="">Home</a>
           </li>
@@ -52,18 +54,43 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
-  &__button {
-    background-color: black;
-    z-index: 1020;
-    margin-top: 10px;
-    cursor: pointer;
-    @include size(36px);
+  &__wrapper {
+    display: flex;
+  }
+  &__logo {
     position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  &__list {
+    position: relative;
+    z-index: 200;
+    font-size: 26px;
+    line-height: 49px;
+    font-weight: bold;
+    color: #3e3f43;
+    background-color: #daa520;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto;
+    transition: 0.2s;
+  }
+  &__button {
+    background-color: #3e3f43;
+    // z-index: 1020;
+    cursor: pointer;
+    @include size(30px);
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border-radius: 20%;
   }
   &__button-lines {
     transition: all 0.7s ease;
     position: absolute;
-    width: 36px;
+    width: 30px;
     height: 2px;
     background-color: white;
     margin-bottom: 10px;
@@ -77,15 +104,15 @@ export default {
     &:nth-child(3) {
       bottom: -5px;
     }
-      .first {
-        transform: rotate(45deg) translateX(7px) translateY(10px);
-      }
-      .lineCenter {
-        opacity: 0;
-      }
-      .lineBottom {
-        transform: rotate(-45deg) translateX(7px) translateY(-10px);
-      }
+    .first {
+      transform: rotate(45deg) translateX(7px) translateY(10px);
     }
+    .lineCenter {
+      opacity: 0;
+    }
+    .lineBottom {
+      transform: rotate(-45deg) translateX(7px) translateY(-10px);
+    }
+  }
 }
 </style>
