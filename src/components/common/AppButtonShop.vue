@@ -23,7 +23,8 @@ export default {
   text-align: center;
   color: #3e3f43;
   margin-left: 141px;
-  transition: 1s;
+  transition: 0.2s;
+  cursor: pointer;
   &:hover {
     background: white;
   }

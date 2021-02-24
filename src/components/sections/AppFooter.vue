@@ -129,10 +129,32 @@ export default {
     max-width: 941px;
   }
   &__email-group {
-    @include flex;
+    @include media ($screen-tablet) {
+      @include flex;
+    max-width: 941px;
+    }
+    @include flex (center, center, column);
     max-width: 941px;
   }
   &__input {
+    @include media ($screen-tablet) {
+ width: 328px;
+    height: 40px;
+    border: 1px solid #daa520;
+    font-size: 16px;
+    line-height: 22px;
+    color: #afafaf;
+    padding-left: 16px;
+     border-radius: 5px;
+    outline: none;
+    &:hover {
+      border: 2px solid #daa520;
+    }
+    &:focus {
+      border: 2px solid #daa520;
+      box-shadow: 0 0 10px #daa520;
+    }
+   }
     max-width: 328px;
     height: 40px;
     border: 1px solid #daa520;
@@ -140,26 +162,34 @@ export default {
     line-height: 22px;
     color: #afafaf;
     padding-left: 16px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+     border-radius: 5px;
     outline: none;
+    margin: 10px;
+    &:hover {
+      border: 2px solid #daa520;
+    }
     &:focus {
-      border: 3px solid #daa520;
-      // box-shadow: 1px 1px 2px 0 #daa520;
+      border: 2px solid #daa520;
+      box-shadow: 0 0 10px #daa520;
     }
   }
   &__button {
-    border-radius: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    @include media ($screen-tablet) {
+      border-radius: 0;
+    border-radius: 5px;
     width: 120px;
     height: 40px;
     margin: auto 0;
     @include hover {
-      background: red;
-      .AppFooter__input {
-        background: $B300;
-      }
+      box-shadow: 0 0 10px #daa520;
+    }
+    }
+    border-radius: 5px;
+    width: 175px;
+    height: 40px;
+    margin: 10px auto;
+   @include hover {
+      box-shadow: 0 0 10px #daa520;
     }
   }
   &__wrapper_text {

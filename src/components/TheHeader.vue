@@ -7,6 +7,7 @@
         alt="logo"
       />
     </div>
+    <app-burger-menu></app-burger-menu>
     <nav class="header__nav">
       <AppLogo></AppLogo>
       <div class="header__wrapper-menu">
@@ -45,6 +46,7 @@
 </template>
 
 <script>
+import AppBurgerMenu from "./common/AppBurgerMenu.vue";
 import AppButton from "./common/AppButton.vue";
 import AppLogo from "./common/AppLogo.vue";
 
@@ -52,6 +54,7 @@ export default {
   components: {
     AppButton,
     AppLogo,
+    AppBurgerMenu,
   },
   name: "TheHeader",
 };

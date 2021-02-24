@@ -60,10 +60,15 @@ export default {
 
 <style lang="scss">
 .testimony {
-  color: #3e3f43;
+  @include media ($screen-tablet) {
+    color: #3e3f43;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  }
+  color: #3e3f43;
+  @include flex(flex-start, center, column);
   width: 100%;
   &__wrapper {
     @include media ($screen-tablet) {
@@ -78,8 +83,13 @@ export default {
     @include flex(space-between, stretch, row, wrap);
   }
   &__wrapper_img {
-    @include flex(space-between);
-    width: 520px;
+    @include media ($screen-tablet) {
+      @include flex(space-between);
+    max-width: 520px;
+
+    }
+    @include flex(space-between, stretch, row, wrap);
+    max-width: 520px;
   }
   &__wrapper-button {
     max-width: 384px;
@@ -135,7 +145,7 @@ export default {
     height: 320px;
   }
   &__card {
-    width: 384px;
+    max-width: 384px;
     height: 280px;
     border: 1px solid #a8dcec;
     padding: 54px 16px;
