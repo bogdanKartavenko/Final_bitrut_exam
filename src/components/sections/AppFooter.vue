@@ -8,17 +8,22 @@
           resources.
         </div>
       </div>
-      <div class="AppFooter__wrapper-form">
-        <form class="AppFooter__email_form" action="" method="get">
-          <div class="AppFooter__email-group">
-            <input
-              type="text"
-              placeholder="Your email address"
-              class="AppFooter__input"
-            />
-            <AppButton class="AppFooter__button">Subscribe</AppButton>
-          </div>
-        </form>
+        <div class="AppFooter__wrapper-form" id="app">
+          <form class="AppFooter__email_form" @submit.prevent="onSubmit">
+            <div class="AppFooter__email-group">
+              <AppInput
+                v-model="email"
+                :has-error="emailHasError"
+                :error-message="emailErrorMessage"
+                :valid="emailValid"
+                type="email"
+                required
+                @blur="emailHasError = !emailValid"
+                @focus="emailHasError = false"
+              />
+              <AppButtonInput :disabled="disabled">Submit</AppButtonInput>
+            </div>
+          </form>
       </div>
     </div>
     <div class="AppFooter__wrapper">
@@ -64,12 +69,14 @@
 
 <script>
 import AppLogo from "@/components/common/AppLogo.vue";
-import AppButton from "@/components/common/AppButton.vue";
+import AppButtonInput from "@/components/common/AppButtonInput.vue";
+import AppInput from "@/components/common/AppInput.vue";
 
 export default {
   components: {
     AppLogo,
-    AppButton,
+    AppButtonInput,
+    AppInput,
   },
   name: "Appfooter",
 };
@@ -199,7 +206,7 @@ export default {
     margin-top: 24px;
   }
   &__list {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       margin-top: 32px;
       width: 14%;
     }

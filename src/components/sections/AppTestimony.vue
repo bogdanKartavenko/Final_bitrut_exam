@@ -89,9 +89,11 @@ export default {
     @include media ($screen-tablet) {
       @include flex(space-between);
     max-width: 520px;
+    margin: 0;
     }
     @include flex(center, stretch, row, wrap);
     max-width: 310px;
+    margin: 0 auto;
   }
   &__wrapper-button {
     max-width: 384px;

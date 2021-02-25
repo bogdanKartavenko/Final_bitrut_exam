@@ -8,7 +8,7 @@ name: "AppButton"
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 .button {
   height: 50px;
   background: #daa520;

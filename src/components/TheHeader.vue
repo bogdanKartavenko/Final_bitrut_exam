@@ -55,6 +55,7 @@ export default {
     AppButton,
     AppLogo,
     AppBurgerMenu,
+
   },
   name: "TheHeader",
 };
@@ -198,7 +199,7 @@ export default {
       margin: 0;
     }
     width: 175px;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 }
 .popup {
@@ -271,10 +272,3 @@ export default {
   }
 }
 </style>
-
-// methods: { // const popup = document.getElementById("navPopup"), //
-popupToggle = document.getElementById("myBtn"), // popupClose =
-document.getElementById("popupClose"); // popupToggle.onclick = function() { //
-popup.style.display = "block"; // }; // popupClose.onclick = function() { //
-popup.style.display = "none"; // }; // window.onclick = function(event) { // if
-(event.target == popup) { // popup.style.display = "none"; // } // }; // }

@@ -53,12 +53,22 @@ export default {
 
 <style lang="scss" scoped>
 .about {
+  @include media ($screen-tablet) {
+    color: #3e3f43;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 0px auto;
+  padding: 0 24px;
+  min-height: 1072px;
+  }
   color: #3e3f43;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
   padding: 0 24px;
   min-height: 1072px;
   &__img-top {
@@ -140,8 +150,7 @@ export default {
     flex-direction: column;
     max-width: 448px;
     min-height: 180px;
-    margin-top: 10px;
-    margin-left: 0px;
+    margin: 10px 0 50px 0;
   }
   &__wrapper-bottom {
     @include media($screen-tablet) {

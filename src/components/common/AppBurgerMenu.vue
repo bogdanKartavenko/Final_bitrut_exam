@@ -3,96 +3,157 @@
     <div class="nav__wrapper">
       <app-logo class="nav__logo"></app-logo>
       <button
-    @click="(e) => $emit('click', e)"
-    class="Burger"
-    :class="{ _active: active }"
-  >
-    <span class="Burger__line"></span>
-  </button>
+        :active="visible"
+        @click="visible = !visible"
+        class="nav__button"
+        :class="{ _active: active }"
+      >
+        <span class="nav__lines"></span>
+        <span class="nav__lines"></span>
+        <span class="nav__lines"></span>
+      </button>
     </div>
-    <div v-show="visible" class="nav__box">
-      <nav class="nav__navigation">
-        <ul class="nav__list">
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Work</a>
-          </li>
-          <li>
-            <a href="">Categories</a>
-          </li>
-          <li>
-            <a href="">Testimony</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <transition enter-active-class="nav-enter" leave-active-class="nav-leave">
+      <div v-show="visible" class="nav__container">
+        <nav class="nav__navigation">
+          <ul class="nav__list">
+            <li>
+              <span href="">Home</span>
+            </li>
+            <li>
+              <span href="">About</span>
+            </li>
+            <li>
+              <span href="">Work</span>
+            </li>
+            <li>
+              <span href="">Categories</span>
+            </li>
+            <li>
+              <span href="">Testimony</span>
+            </li>
+          </ul>
+          <app-button-shop class="nav__button-login">SING UP</app-button-shop>
+        </nav>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+import AppButtonShop from "./AppButtonShop.vue";
 import AppLogo from "./AppLogo.vue";
 export default {
-  components: { AppLogo },
+  components: { AppLogo, AppButtonShop },
   name: "AppBurgerMenu",
-  props: {
-    active: Boolean,
+  data() {
+    return {
+      visible: false,
+      openSide: null,
+    };
   },
 };
 </script>
 
 <style lang="scss">
-$style: Burger;
-
-.#{$style} {
-  position: relative;
-  width: 24px;
-  height: 14px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  &._active {
-    .#{$style}__line {
-      transform: scaleX(0);
-    }
-    &::after {
-      transform: rotate(-45deg) translate(1px, 5px);
-    }
-    &::before {
-      transform: rotate(45deg) translate(2px, -4px);
-    }
+.nav {
+  @include media($screen-tablet) {
+    display: flex;
   }
-  &::before {
-    top: 0;
-    transform-origin: left top;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  &__wrapper {
+    display: flex;
   }
-
-  &::after {
-    bottom: 0;
-    transform-origin: left bottom;
-  }
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    width: 24px;
-    height: 2px;
+  &__logo {
     position: absolute;
-    background-color: black;
-    transition: transform 0.2s ease;
+    left: 15px;
+    top: 15px;
   }
-  &__line {
-    display: block;
-    width: 24px;
+  &__list {
+    position: relative;
+    z-index: 200;
+    font-size: 26px;
+    line-height: 49px;
+    font-weight: bold;
+    color: #3e3f43;
+    // background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto;
+  }
+  &__button {
+    z-index: 1020;
+    cursor: pointer;
+    @include size(30px);
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border-radius: 20%;
+  }
+  &__lines {
+    transition: all 0.7s ease;
+    position: absolute;
+    width: 30px;
     height: 2px;
-    background-color: black;
-    transition: transform 0.2s ease;
-    transform-origin: center;
+    background-color: white;
+    margin-bottom: 10px;
+    &:nth-child(1) {
+      top: 5px;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(3) {
+      bottom: -5px;
+    }
+  }
+  &__container {
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    position: fixed;
+    background-color: #f9bdbd;
+    overflow: hidden;
+  }
+
+  .nav-leave {
+    animation: navLeave 0.4s ease;
+  }
+  .nav-enter {
+    animation: navEnter 0.4s ease;
+  }
+  @keyframes fromLeft {
+    from {
+      transform: translateX(400%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes navLeave {
+    from {
+      width: 100vw;
+    }
+    to {
+      width: 0px;
+    }
+  }
+
+  @keyframes navEnter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100vw;
+    }
   }
 }
 </style>

@@ -27,7 +27,7 @@ export default {
     new Glide(".glide", {
       type: "carousel",
       startAt: 0,
-      gap: 30,
+      gap: 24,
       autoplay: 2500,
     }).mount();
   },
