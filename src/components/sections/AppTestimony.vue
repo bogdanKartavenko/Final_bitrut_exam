@@ -11,6 +11,7 @@
         </div>
       </div>
       <div class="testimony__wrapper-card">
+
         <div class="testimony__card">
           <app-star class="tistimony__star"></app-star>
           <div class="testimony__wrapper-text">
@@ -50,10 +51,12 @@
 </template>
 
 <script>
-import AppStar from "@/components/common/AppStar.vue";
+
 import AppTitle from "@/components/common/AppTitle.vue";
+// import AppSliderComment from "@/components/common/AppSliderComment.vue";
+
 export default {
-  components: { AppTitle, AppStar },
+  components: { AppTitle},
   name: "AppTestimony",
 };
 </script>
@@ -86,10 +89,9 @@ export default {
     @include media ($screen-tablet) {
       @include flex(space-between);
     max-width: 520px;
-
     }
-    @include flex(space-between, stretch, row, wrap);
-    max-width: 520px;
+    @include flex(center, stretch, row, wrap);
+    max-width: 310px;
   }
   &__wrapper-button {
     max-width: 384px;
@@ -98,9 +100,15 @@ export default {
     justify-content: space-between;
   }
   &__wrapper-frame {
-    width: 100%;
+    @include media ($screen-tablet) {
+      width: 100%;
     max-width: 952px;
     margin: 23px 0 120px 0;
+    @include flex(flex-end);
+    }
+    width: 100%;
+    max-width: 310px;
+    margin: 23px 15px 80px 0;
     @include flex(flex-end);
   }
   &__wrapper-text {
@@ -118,7 +126,12 @@ export default {
   &__wrapper-accaunt {
     display: flex;
     align-items: center;
-
+  }
+  &__wrapper-card {
+    @include media ($screen-tablet) {
+      padding: 0px;
+    }
+    padding: 25px 15px;
   }
   &__button-left {
     cursor: pointer;
@@ -141,8 +154,8 @@ export default {
     }
   }
   &__img {
-    width: 240px;
-    height: 320px;
+   min-width: 240px;
+    min-height: 320px;
   }
   &__card {
     max-width: 384px;

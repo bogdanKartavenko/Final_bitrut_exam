@@ -1,44 +1,16 @@
 <template>
-  <div class="nav">
-    <div class="nav__wrapper">
-      <app-logo class="nav__logo"></app-logo>
-      <button
+  <button
     @click="(e) => $emit('click', e)"
     class="Burger"
     :class="{ _active: active }"
   >
     <span class="Burger__line"></span>
   </button>
-    </div>
-    <div v-show="visible" class="nav__box">
-      <nav class="nav__navigation">
-        <ul class="nav__list">
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Work</a>
-          </li>
-          <li>
-            <a href="">Categories</a>
-          </li>
-          <li>
-            <a href="">Testimony</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
 </template>
 
 <script>
-import AppLogo from "./AppLogo.vue";
 export default {
-  components: { AppLogo },
-  name: "AppBurgerMenu",
+  name: "AppBurger",
   props: {
     active: Boolean,
   },

@@ -84,25 +84,25 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 0 24px;
-  background-image: url("../../assets/images/footer.png") ;
+  background-image: url("../../assets/images/footer.png");
   background-size: cover;
   &__wrapper_email {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       width: 100%;
-    max-width: 952px;
-    margin: 53px 0 86px 0;
-    @include flex(space-between);
+      max-width: 952px;
+      margin: 53px 0 86px 0;
+      @include flex(space-between);
     }
     width: 100%;
     max-width: 952px;
     margin: 53px 10px 86px 10px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-
   }
   &__wrapper_title {
     max-width: 493px;
-    min-width: 300px;
+    width: 100%;
     display: block;
   }
   &__wrapper {
@@ -110,9 +110,11 @@ export default {
     max-width: 952px;
     @include flex(start);
   }
-  &__wrapper-form {
-    display: flex;
-    align-items: center;
+  &__wrapper_text {
+    @include flex(space-between, stretch, row, wrap);
+    max-width: 708px;
+    width: 100%;
+    border-top: 0.5px solid;
   }
   &__title {
     font-weight: 700;
@@ -129,32 +131,32 @@ export default {
     max-width: 941px;
   }
   &__email-group {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       @include flex;
-    max-width: 941px;
+      max-width: 941px;
     }
-    @include flex (center, center, column);
+    @include flex(center, center, column);
     max-width: 941px;
   }
   &__input {
-    @include media ($screen-tablet) {
- width: 328px;
-    height: 40px;
-    border: 1px solid #daa520;
-    font-size: 16px;
-    line-height: 22px;
-    color: #afafaf;
-    padding-left: 16px;
-     border-radius: 5px;
-    outline: none;
-    &:hover {
-      border: 2px solid #daa520;
+    @include media($screen-tablet) {
+      width: 328px;
+      height: 40px;
+      border: 1px solid #daa520;
+      font-size: 16px;
+      line-height: 22px;
+      color: #afafaf;
+      padding-left: 16px;
+      border-radius: 5px;
+      outline: none;
+      &:hover {
+        border: 2px solid #daa520;
+      }
+      &:focus {
+        border: 2px solid #daa520;
+        box-shadow: 0 0 10px #daa520;
+      }
     }
-    &:focus {
-      border: 2px solid #daa520;
-      box-shadow: 0 0 10px #daa520;
-    }
-   }
     max-width: 328px;
     height: 40px;
     border: 1px solid #daa520;
@@ -162,7 +164,7 @@ export default {
     line-height: 22px;
     color: #afafaf;
     padding-left: 16px;
-     border-radius: 5px;
+    border-radius: 5px;
     outline: none;
     margin: 10px;
     &:hover {
@@ -174,35 +176,35 @@ export default {
     }
   }
   &__button {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       border-radius: 0;
-    border-radius: 5px;
-    width: 120px;
-    height: 40px;
-    margin: auto 0;
-    @include hover {
-      box-shadow: 0 0 10px #daa520;
-    }
+      border-radius: 5px;
+      width: 120px;
+      height: 40px;
+      margin: auto 0;
+      @include hover {
+        box-shadow: 0 0 10px #daa520;
+      }
     }
     border-radius: 5px;
     width: 175px;
     height: 40px;
     margin: 10px auto;
-   @include hover {
+    @include hover {
       box-shadow: 0 0 10px #daa520;
     }
-  }
-  &__wrapper_text {
-    @include flex(space-between);
-    max-width: 708px;
-    border-top: 0.5px solid;
   }
   &__list_logo {
     width: 192px;
     margin-top: 24px;
   }
   &__list {
+    @include media ($screen-tablet) {
+      margin-top: 32px;
+      width: 14%;
+    }
     margin-top: 32px;
+    width: 50%;
   }
   &__list_title {
     font-weight: 600;
