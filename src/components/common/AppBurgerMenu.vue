@@ -150,16 +150,11 @@ export default {
   }
 }
 .top {
-  transform: translateY(9px);
-}
-.top {
-  transform: rotate(45deg);
-}
-.center {
-   display: none;
+  width: 55%;
+ transform: translateX(16px) translateY(4px) rotate(45deg);
 }
 .bottom {
-  transform: translateY(-9px);
-  // transform: rotate(-45deg);
+  width: 55%;
+  transform: translateX(16px) translateY(-4px) rotate(-45deg);
 }
 </style>
