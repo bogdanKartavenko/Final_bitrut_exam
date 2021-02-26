@@ -1,17 +1,17 @@
 <template>
   <div class="about">
-    <AppTitle text="Who we are" caption="ABOUT US" />
-    <div class="about__box-top">
-      <img
+    <AppTitle class="about__title" text="Who we are" caption="ABOUT US" />
+    <img
         class="about__img-top"
         src="@/assets/images/about_top.png"
         alt="images"
       />
-      <img
-        class="about__img"
-        src="@/assets/images/about__top2.png"
+    <div class="about__box-top">
+      <!-- <img
+        class="about__img-top"
+        src="@/assets/images/about_top.png"
         alt="images"
-      />
+      /> -->
       <div class="about__wrapper-top">
         <div class="about__text">
           WOODIES
@@ -25,21 +25,26 @@
     </div>
     <div class="about__box-bottom">
       <div class="about__wrapper-bottom">
-        <div class="about__text">
-          Customized furniture
-          <span class="about__text-bold">made just for you</span>
-        </div>
-        <div class="about__desc desc">
-          Get it easy to adjust furniture to the shape and size of your dwelling
-          or business.
-        </div>
+          <div class="about__text">
+            Customized furniture
+            <span class="about__text-bold">made just for you</span>
+          </div>
+          <div class="about__desc desc">
+            Get it easy to adjust furniture to the shape and size of your
+            dwelling or business.
+          </div>
       </div>
-      <img
+      <!-- <img
+        class="about__img-bot"
+        src="@/assets/images/about_us1.png"
+        alt="images"
+      /> -->
+    </div>
+    <img
         class="about__img-bot"
         src="@/assets/images/about_us1.png"
         alt="images"
       />
-    </div>
   </div>
 </template>
 
@@ -53,59 +58,61 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  @include media ($screen-tablet) {
+  @include media($screen-tablet) {
     color: #3e3f43;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto 0px auto;
-  padding: 0 24px;
-  min-height: 1072px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 100px auto 0px auto;
+    min-height: 1072px;
   }
   color: #3e3f43;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0 auto 100px auto;
-  padding: 0 24px;
+  margin: 0 auto 0 auto;
   min-height: 1072px;
   &__img-top {
     @include media($screen-tablet) {
-      max-width: 426px;
-      max-height: 388px;
+      position: absolute;
+      max-width: 594px;
+      max-height: 636px;
+      z-index: 10;
+      left: 0;
+      margin-top: 140px;
     }
+       position: absolute;
     max-width: 320px;
-    max-height: 388px;
+    max-height: 636px;
+    margin-top: 150px;
+    z-index: 10;
   }
   &__img-bot {
     @include media($screen-tablet) {
       position: absolute;
-      right: -160px;
-      bottom: 0;
       max-width: 287px;
       max-height: 384px;
+      right: 0;
+      margin-top: 566px;
+      z-index: 10;
     }
-
-    position: static;
+    position: absolute;
     max-width: 287px;
     max-height: 384px;
-  }
-  &__img {
-    position: absolute;
-    max-width: 314px;
-    max-height: 382px;
-    bottom: -240px;
-    left: -110px;
+    right: 0;
+    margin-top: 566px;
+    z-index: 10;
   }
   &__box-top {
     @include media($screen-tablet) {
       position: relative;
       width: 100%;
       max-width: 952px;
-      margin: 40px 0;
+      margin: 144px 0 220px 0;
       display: flex;
+      justify-content: flex-end;
       align-items: center;
     }
     position: relative;
@@ -122,16 +129,16 @@ export default {
       position: relative;
       width: 100%;
       max-width: 952px;
-      height: 384px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
       margin: 0;
     }
     position: relative;
     width: 100%;
     max-width: 952px;
-    height: 384px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
@@ -144,12 +151,14 @@ export default {
       margin-top: 0px;
       display: flex;
       text-align: start;
+      z-index: 10;
     }
     display: flex;
     text-align: center;
     flex-direction: column;
     max-width: 448px;
     min-height: 180px;
+    z-index: 10;
     margin: 10px 0 50px 0;
   }
   &__wrapper-bottom {
@@ -159,6 +168,8 @@ export default {
       height: 131px;
       display: flex;
       text-align: start;
+      z-index: 30;
+      padding: 0;
     }
     display: flex;
     text-align: center;
@@ -166,6 +177,8 @@ export default {
     position: relative;
     max-width: 648px;
     height: 131px;
+    z-index: 30;
+    padding: 0 10px;
   }
   &__subtitle {
     max-width: 448px;
@@ -183,13 +196,13 @@ export default {
     font-size: 24px;
     line-height: 33px;
     margin-top: 16px;
-    color: #000000;
+    color: #3e3f43;
   }
   &__text {
     font-weight: 600;
     font-size: 36px;
     line-height: 49px;
-    color: #000000;
+    color: #3e3f43;
   }
   &__text-bold {
     font-weight: 800;

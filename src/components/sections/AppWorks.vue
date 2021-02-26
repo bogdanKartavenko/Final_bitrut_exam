@@ -1,6 +1,6 @@
 <template>
   <div class="works">
-      <AppTitle text="How to custom" caption="HOW IT WORKS"/>
+      <AppTitle class="works__title" text="How to custom" caption="HOW IT WORKS"/>
     <div class="works__box">
       <div class="works__wrapper-img">
         <div class="works__box-img">
@@ -40,7 +40,12 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
-
+&__title {
+  @include media ($screen-tablet) {
+    margin-bottom: 0;
+  }
+  margin-bottom: 100px;
+}
   &__wrapper-title {
     width: 90%;
     display: flex;

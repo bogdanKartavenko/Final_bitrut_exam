@@ -108,9 +108,17 @@ export default {
     flex-wrap: wrap;
   }
   &__wrapper_title {
-    max-width: 493px;
+    @include media ($screen-tablet) {
+      max-width: 493px;
     width: 100%;
     display: block;
+    text-align: start;
+    }
+    max-width: 493px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
   &__wrapper {
     width: 100%;

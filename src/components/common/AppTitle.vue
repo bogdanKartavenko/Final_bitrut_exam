@@ -72,7 +72,7 @@ export default {
     border-top: 1px solid;
     margin: 0 16px;
     }
-    display: none;
+   display: none;
   }
 }
 </style>

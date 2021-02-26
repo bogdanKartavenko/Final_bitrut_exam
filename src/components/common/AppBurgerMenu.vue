@@ -58,7 +58,7 @@ export default {
 <style lang="scss">
 .nav {
   @include media($screen-tablet) {
-    display: flex;
+    display: none;
   }
   display: flex;
   position: absolute;
