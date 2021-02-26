@@ -2,15 +2,10 @@
   <div class="nav">
     <div class="nav__wrapper">
       <app-logo class="nav__logo"></app-logo>
-      <button
-        :active="visible"
-        @click="visible = !visible"
-        class="nav__button"
-        :class="{ _active: active }"
-      >
-        <span class="nav__lines"></span>
-        <span class="nav__lines"></span>
-        <span class="nav__lines"></span>
+      <button :active="visible" @click="visible = !visible" class="nav__button">
+        <span :class="{ top: visible }" class="nav__lines"></span>
+        <span :class="{ center: visible }" class="nav__lines"></span>
+        <span :class="{ bottom: visible }" class="nav__lines"></span>
       </button>
     </div>
     <transition enter-active-class="nav-enter" leave-active-class="nav-leave">
@@ -153,5 +148,18 @@ export default {
       width: 100vw;
     }
   }
+}
+.top {
+  transform: translateY(9px);
+}
+.top {
+  transform: rotate(45deg);
+}
+.center {
+   display: none;
+}
+.bottom {
+  transform: translateY(-9px);
+  // transform: rotate(-45deg);
 }
 </style>

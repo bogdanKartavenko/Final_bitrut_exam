@@ -75,7 +75,7 @@ export default {
     display: none;
   }
   position: relative;
-  width: 280px;
+  width: 300px;
   margin: 20px 10px;
   box-sizing: border-box;
   &__track {
@@ -91,6 +91,7 @@ export default {
     white-space: nowrap;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
     will-change: transform;
     z-index: 1;
   }

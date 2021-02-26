@@ -11,9 +11,7 @@
         </div>
       </div>
       <div class="testimony__wrapper-card">
-        <app-slider-comment></app-slider-comment>
-        <!-- <div class="testimony__card">
-          <app-star class="tistimony__star"></app-star>
+        <div class="testimony__card">
           <div class="testimony__wrapper-text">
             My experience with WOODIES is a complete success, from customed
             furniture, range of product, modern design, purchasing experience,
@@ -27,8 +25,8 @@
               <div>Jakarta Selatan</div>
             </div>
           </div>
-        </div> -->
-        <!-- <div class="testimony__wrapper-button">
+        </div>
+        <div class="testimony__wrapper-button">
           <button class="testimony__button-left">
             <div class="testimony__border-left"></div>
             &#8592; Previous
@@ -37,7 +35,7 @@
             Next &#8594;
             <div class="testimony__border-right"></div>
           </button>
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="testimony__wrapper-frame">
@@ -53,10 +51,9 @@
 <script>
 
 import AppTitle from "@/components/common/AppTitle.vue";
-import AppSliderComment from "@/components/common/AppSliderComment.vue";
 
 export default {
-  components: { AppTitle, AppSliderComment },
+  components: { AppTitle },
   name: "AppTestimony",
 };
 </script>

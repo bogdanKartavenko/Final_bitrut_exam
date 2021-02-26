@@ -55,7 +55,6 @@ export default {
     AppButton,
     AppLogo,
     AppBurgerMenu,
-
   },
   name: "TheHeader",
 };
@@ -150,16 +149,18 @@ export default {
     max-width: 952px;
   }
   &__box {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       max-width: 504px;
       display: flex;
-    flex-direction: column;
-    text-align: start;
+      flex-direction: column;
+      text-align: start;
     }
     display: flex;
     flex-direction: column;
     text-align: center;
     max-width: 504px;
+    text-shadow: white 1px 1px 0, white 2px 2px 0, white 3px 3px 0,
+      white 4px 4px 0, white 5px 5px 0;
   }
   &__subtitle {
     @include media($screen-tablet) {

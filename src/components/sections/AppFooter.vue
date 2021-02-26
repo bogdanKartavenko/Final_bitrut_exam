@@ -8,22 +8,22 @@
           resources.
         </div>
       </div>
-        <div class="AppFooter__wrapper-form" id="app">
-          <form class="AppFooter__email_form" @submit.prevent="onSubmit">
-            <div class="AppFooter__email-group">
-              <AppInput
-                v-model="email"
-                :has-error="emailHasError"
-                :valid="emailValid"
-                type="email"
-                required
-                @blur="emailHasError = !emailValid"
-                @focus="emailHasError = false"
-                placeholder="Your email address"
-              />
-              <AppButtonInput :disabled="disabled">Submit</AppButtonInput>
-            </div>
-          </form>
+      <div class="AppFooter__wrapper-form" id="app">
+        <form class="AppFooter__email_form" @submit.prevent="onSubmit">
+          <div class="AppFooter__email-group">
+            <AppInput
+              v-model="email"
+              :has-error="emailHasError"
+              :valid="emailValid"
+              type="email"
+              required
+              @blur="emailHasError = !emailValid"
+              @focus="emailHasError = false"
+              placeholder="Your email address"
+            />
+            <AppButtonInput :disabled="disabled">Submit</AppButtonInput>
+          </div>
+        </form>
       </div>
     </div>
     <div class="AppFooter__wrapper">
@@ -79,19 +79,26 @@ export default {
     AppInput,
   },
   name: "Appfooter",
-  computed: {
-    disabled() { return !this.emailValid},
-    emailValid() {
-      const re = /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(this.email).toLowerCase());
-    },
-  },
   data() {
     return {
-      email:"",
+      email: "",
       emailHasError: false,
-    }
-  }
+    };
+  },
+  computed: {
+    emailValid() {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.email).toLowerCase());
+    },
+    disabled() {
+      return !this.emailValid;
+    },
+  },
+  methods: {
+    onSubmit() {
+      alert("Отлично!");
+    },
+  },
 };
 </script>
 
@@ -121,11 +128,11 @@ export default {
     flex-wrap: wrap;
   }
   &__wrapper_title {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       max-width: 493px;
-    width: 100%;
-    display: block;
-    text-align: start;
+      width: 100%;
+      display: block;
+      text-align: start;
     }
     max-width: 493px;
     width: 100%;

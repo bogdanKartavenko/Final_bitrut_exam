@@ -7,11 +7,6 @@
         alt="images"
       />
     <div class="about__box-top">
-      <!-- <img
-        class="about__img-top"
-        src="@/assets/images/about_top.png"
-        alt="images"
-      /> -->
       <div class="about__wrapper-top">
         <div class="about__text">
           WOODIES
@@ -34,11 +29,6 @@
             dwelling or business.
           </div>
       </div>
-      <!-- <img
-        class="about__img-bot"
-        src="@/assets/images/about_us1.png"
-        alt="images"
-      /> -->
     </div>
     <img
         class="about__img-bot"
@@ -74,6 +64,8 @@ export default {
   width: 100%;
   margin: 0 auto 0 auto;
   min-height: 1072px;
+  text-shadow: white 1px 1px 0, white 2px 2px 0, white 3px 3px 0,
+      white 4px 4px 0, white 5px 5px 0;
   &__img-top {
     @include media($screen-tablet) {
       position: absolute;
