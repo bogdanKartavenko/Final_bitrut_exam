@@ -50,9 +50,8 @@
 </template>
 
 <script>
-
 import AppTitle from "@/components/common/AppTitle.vue";
-import AppSliderComment from '../common/AppSliderComment.vue';
+import AppSliderComment from "../common/AppSliderComment.vue";
 
 export default {
   components: { AppTitle, AppSliderComment },
@@ -131,9 +130,9 @@ export default {
   &__wrapper-card {
     @include media($screen-tablet) {
       padding: 0px;
+      width: 384px;
     }
     width: 300px;
-
   }
   &__button-left {
     cursor: pointer;
@@ -160,17 +159,17 @@ export default {
     min-height: 320px;
   }
   &__card {
-    @include media ($screen-tablet) {
-      max-width: 384px;
-    height: 280px;
-    border: 1px solid #a8dcec;
-    padding: 54px 16px;
-    border-top-right-radius: 70px;
-    border-bottom-left-radius: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    @include media($screen-tablet) {
+      width: 384px;
+      height: 280px;
+      border: 1px solid #a8dcec;
+      padding: 54px 16px;
+      border-top-right-radius: 70px;
+      border-bottom-left-radius: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
     }
     width: 300px;
     height: 280px;

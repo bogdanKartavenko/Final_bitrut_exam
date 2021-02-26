@@ -73,6 +73,7 @@ export default {
 .glide {
   @include media ($screen-tablet) {
     display: none;
+
   }
   position: relative;
   width: 300px;

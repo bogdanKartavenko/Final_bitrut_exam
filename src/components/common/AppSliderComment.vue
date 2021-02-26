@@ -26,40 +26,41 @@
           </div>
         </li>
         <li class="glide__slide">
-           <div class="testimony__card">
-              <div class="testimony__wrapper-text">
-                curabitur gravida arcu ac tortor
-              </div>
-              <div class="testimony__wrapper-accaunt">
-                <img
-                  class="tistimony__img-account"
-                  src="@/assets/images/Mask_Group.png"
-                  alt="img"
-                />
-                <div class="testimony__wrapper-name">
-                  <div>Elena Mozgovaya</div>
-                  <div>New York</div>
-                </div>
+          <div class="testimony__card">
+            <div class="testimony__wrapper-text">
+              curabitur gravida arcu ac tortor
+            </div>
+            <div class="testimony__wrapper-accaunt">
+              <img
+                class="tistimony__img-account"
+                src="@/assets/images/Mask_Group.png"
+                alt="img"
+              />
+              <div class="testimony__wrapper-name">
+                <div>Elena Mozgovaya</div>
+                <div>New York</div>
               </div>
             </div>
+          </div>
         </li>
         <li class="glide__slide">
-           <div class="testimony__card">
-              <div class="testimony__wrapper-text">
-                ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum
-              </div>
-              <div class="testimony__wrapper-accaunt">
-                <img
-                  class="tistimony__img-account"
-                  src="@/assets/images/Mask_Group.png"
-                  alt="img"
-                />
-                <div class="testimony__wrapper-name">
-                  <div>Jon Smitt</div>
-                  <div>Dakota</div>
-                </div>
+          <div class="testimony__card">
+            <div class="testimony__wrapper-text">
+              ultrices dui sapien eget mi proin sed libero enim sed faucibus
+              turpis in eu mi bibendum
+            </div>
+            <div class="testimony__wrapper-accaunt">
+              <img
+                class="tistimony__img-account"
+                src="@/assets/images/Mask_Group.png"
+                alt="img"
+              />
+              <div class="testimony__wrapper-name">
+                <div>Jon Smitt</div>
+                <div>Dakota</div>
               </div>
             </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -75,8 +76,7 @@
 </template>
 
 <script>
-
-import Glide from '@glidejs/glide'
+import Glide from "@glidejs/glide";
 
 export default {
   name: "SlideComment",
@@ -85,17 +85,21 @@ export default {
       type: "carousel",
       startAt: 0,
       gap: 24,
-      autoplay: 0,
+      autoplay: 4000,
     }).mount();
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 .glide * {
   box-sizing: inherit;
 }
 .glide {
+  @include media ($screen-tablet) {
+width: 384px;
+// display: block
+  }
   position: relative;
   width: 300px;
   margin: 20px 10px;
@@ -135,7 +139,7 @@ export default {
     user-select: none;
     display: flex;
     justify-content: space-between;
-     cursor: pointer;
+    cursor: pointer;
     color: #c4c4c4;
     font-weight: 600;
     font-size: 14px;
@@ -164,6 +168,9 @@ export default {
   }
 }
 .slide__wrapper {
+  @include media($screen-tablet) {
+    width: 384px;
+  }
   width: 300px;
 }
 </style>

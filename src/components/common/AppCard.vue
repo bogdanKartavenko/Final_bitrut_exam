@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss">
 .card {
-  width: 300px;
+  width: 280px;
   height: 400px;
   border-top-right-radius: 120px;
   border-bottom-left-radius: 120px;
