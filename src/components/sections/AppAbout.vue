@@ -87,6 +87,7 @@ export default {
     max-width: 320px;
     max-height: 636px;
     margin-top: 150px;
+    left: 0;
     z-index: 10;
   }
   &__img-bot {

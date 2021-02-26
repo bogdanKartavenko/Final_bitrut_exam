@@ -4,19 +4,19 @@
     <div class="works__box">
       <div class="works__wrapper-img">
         <div class="works__box-img">
-          <img src="@/assets/images/works_1.png" alt="" />
+          <img class="works__img" src="@/assets/images/works_1.png" alt="" />
           <div class="works__img-text">Choose Design</div>
         </div>
         <div class="works__box-img">
-          <img src="@/assets/images/works_2.png" alt="" />
+          <img  class="works__img" src="@/assets/images/works_2.png" alt="" />
           <div class="works__img-text">Area measuring</div>
         </div>
         <div class="works__box-img">
-          <img src="@/assets/images/works_3.png" alt="" />
+          <img class="works__img"  src="@/assets/images/works_3.png" alt="" />
           <div class="works__img-text">Budgeting</div>
         </div>
         <div class="works__box-img">
-          <img src="@/assets/images/works_4.png" alt="" />
+          <img class="works__img" src="@/assets/images/works_4.png" alt="" />
           <div class="works__img-text">Production</div>
         </div>
       </div>
@@ -46,14 +46,6 @@ export default {
   }
   margin-bottom: 100px;
 }
-  &__wrapper-title {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 120px;
-  }
   &__border {
     width: 65px;
   }
@@ -79,9 +71,13 @@ export default {
     justify-content: center;
     align-items: center;
   }
+  &__img {
+    width: 160px;
+    height: 120px;
+  }
   &__img-text {
-    position: absolute;
-    margin-top: 130px;
+    position: relative;
+    // margin-top: 130px;
     font-weight: bold;
     font-size: 24px;
     line-height: 33px;
