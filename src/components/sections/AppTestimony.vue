@@ -11,8 +11,8 @@
         </div>
       </div>
       <div class="testimony__wrapper-card">
-
-        <div class="testimony__card">
+        <app-slider-comment></app-slider-comment>
+        <!-- <div class="testimony__card">
           <app-star class="tistimony__star"></app-star>
           <div class="testimony__wrapper-text">
             My experience with WOODIES is a complete success, from customed
@@ -27,8 +27,8 @@
               <div>Jakarta Selatan</div>
             </div>
           </div>
-        </div>
-        <div class="testimony__wrapper-button">
+        </div> -->
+        <!-- <div class="testimony__wrapper-button">
           <button class="testimony__button-left">
             <div class="testimony__border-left"></div>
             &#8592; Previous
@@ -37,7 +37,7 @@
             Next &#8594;
             <div class="testimony__border-right"></div>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="testimony__wrapper-frame">
@@ -53,32 +53,32 @@
 <script>
 
 import AppTitle from "@/components/common/AppTitle.vue";
-// import AppSliderComment from "@/components/common/AppSliderComment.vue";
+import AppSliderComment from "@/components/common/AppSliderComment.vue";
 
 export default {
-  components: { AppTitle},
+  components: { AppTitle, AppSliderComment },
   name: "AppTestimony",
 };
 </script>
 
 <style lang="scss">
 .testimony {
-  @include media ($screen-tablet) {
+  @include media($screen-tablet) {
     color: #3e3f43;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   color: #3e3f43;
   @include flex(flex-start, center, column);
   width: 100%;
   &__wrapper {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       width: 100%;
-    max-width: 952px;
-    margin-top: 40px;
-    @include flex(space-between);
+      max-width: 952px;
+      margin-top: 40px;
+      @include flex(space-between);
     }
     width: 100%;
     max-width: 952px;
@@ -86,10 +86,10 @@ export default {
     @include flex(space-between, stretch, row, wrap);
   }
   &__wrapper_img {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       @include flex(space-between);
-    max-width: 520px;
-    margin: 0;
+      max-width: 520px;
+      margin: 0;
     }
     @include flex(center, stretch, row, wrap);
     max-width: 310px;
@@ -102,11 +102,11 @@ export default {
     justify-content: space-between;
   }
   &__wrapper-frame {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       width: 100%;
-    max-width: 952px;
-    margin: 23px 0 120px 0;
-    @include flex(flex-end);
+      max-width: 952px;
+      margin: 23px 0 120px 0;
+      @include flex(flex-end);
     }
     width: 100%;
     max-width: 310px;
@@ -130,7 +130,7 @@ export default {
     align-items: center;
   }
   &__wrapper-card {
-    @include media ($screen-tablet) {
+    @include media($screen-tablet) {
       padding: 0px;
     }
     padding: 25px 15px;
@@ -156,7 +156,7 @@ export default {
     }
   }
   &__img {
-   min-width: 240px;
+    min-width: 240px;
     min-height: 320px;
   }
   &__card {

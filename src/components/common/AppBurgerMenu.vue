@@ -33,7 +33,6 @@
               <span href="">Testimony</span>
             </li>
           </ul>
-          <app-button-shop class="nav__button-login">SING UP</app-button-shop>
         </nav>
       </div>
     </transition>
@@ -41,10 +40,9 @@
 </template>
 
 <script>
-import AppButtonShop from "./AppButtonShop.vue";
 import AppLogo from "./AppLogo.vue";
 export default {
-  components: { AppLogo, AppButtonShop },
+  components: { AppLogo },
   name: "AppBurgerMenu",
   data() {
     return {

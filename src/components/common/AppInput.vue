@@ -1,8 +1,6 @@
 <template>
   <div class="input">
     <div class="input__row">
-      <label class="input__label" :for="id" v-if="!!label">{{ label }}</label>
-      <span v-if="hasError" class="input__message">{{ errorMessage }}</span>
     </div>
     <input
       class="input__input"
@@ -31,7 +29,6 @@ export default {
     required: Boolean,
     placeholder: String,
     hasError: Boolean,
-    errorMessage: String,
     value: String,
     valid: Boolean,
   },
@@ -84,11 +81,5 @@ export default {
     border: 2px solid #daa520;
     box-shadow: 0 0 10px #daa520;
   }
-}
-.input__input._valid {
-  border-color: green;
-}
-.input__input._error {
-  border-color: red;
 }
 </style>

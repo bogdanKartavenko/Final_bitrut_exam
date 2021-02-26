@@ -14,12 +14,12 @@
               <AppInput
                 v-model="email"
                 :has-error="emailHasError"
-                :error-message="emailErrorMessage"
                 :valid="emailValid"
                 type="email"
                 required
                 @blur="emailHasError = !emailValid"
                 @focus="emailHasError = false"
+                placeholder="Your email address"
               />
               <AppButtonInput :disabled="disabled">Submit</AppButtonInput>
             </div>
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="AppFooter__date">© 2020 WOODIES</div>
+    <div class="AppFooter__date">© 2021 WOODIES</div>
   </div>
 </template>
 
@@ -79,6 +79,19 @@ export default {
     AppInput,
   },
   name: "Appfooter",
+  computed: {
+    disabled() { return !this.emailValid},
+    emailValid() {
+      const re = /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.email).toLowerCase());
+    },
+  },
+  data() {
+    return {
+      email:"",
+      emailHasError: false,
+    }
+  }
 };
 </script>
 

@@ -46,9 +46,10 @@ export default {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.button:disabled {
+.button-input:disabled {
   background-color: darkgray;
   color: grey;
   cursor: not-allowed;
 }
+
 </style>

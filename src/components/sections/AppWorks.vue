@@ -22,13 +22,15 @@
       </div>
       <button class="works__button button">Get Personalized Now</button>
     </div>
+    <app-slider-comment></app-slider-comment>
   </div>
 </template>
 
 <script>
 import AppTitle from "@/components/common/AppTitle.vue";
+import AppSliderComment from '../common/AppSliderComment.vue';
 export default {
-  components: { AppTitle },
+  components: { AppTitle, AppSliderComment },
   name: "AppWorks",
 };
 </script>
