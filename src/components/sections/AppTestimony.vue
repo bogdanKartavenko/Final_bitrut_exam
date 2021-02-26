@@ -11,7 +11,8 @@
         </div>
       </div>
       <div class="testimony__wrapper-card">
-        <div class="testimony__card">
+        <app-slider-comment></app-slider-comment>
+        <!-- <div class="testimony__card">
           <div class="testimony__wrapper-text">
             My experience with WOODIES is a complete success, from customed
             furniture, range of product, modern design, purchasing experience,
@@ -25,8 +26,8 @@
               <div>Jakarta Selatan</div>
             </div>
           </div>
-        </div>
-        <div class="testimony__wrapper-button">
+        </div> -->
+        <!-- <div class="testimony__wrapper-button">
           <button class="testimony__button-left">
             <div class="testimony__border-left"></div>
             &#8592; Previous
@@ -35,7 +36,7 @@
             Next &#8594;
             <div class="testimony__border-right"></div>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="testimony__wrapper-frame">
@@ -51,9 +52,10 @@
 <script>
 
 import AppTitle from "@/components/common/AppTitle.vue";
+import AppSliderComment from '../common/AppSliderComment.vue';
 
 export default {
-  components: { AppTitle },
+  components: { AppTitle, AppSliderComment },
   name: "AppTestimony",
 };
 </script>
@@ -130,7 +132,8 @@ export default {
     @include media($screen-tablet) {
       padding: 0px;
     }
-    padding: 25px 15px;
+    width: 300px;
+
   }
   &__button-left {
     cursor: pointer;
@@ -157,7 +160,19 @@ export default {
     min-height: 320px;
   }
   &__card {
-    max-width: 384px;
+    @include media ($screen-tablet) {
+      max-width: 384px;
+    height: 280px;
+    border: 1px solid #a8dcec;
+    padding: 54px 16px;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    }
+    width: 300px;
     height: 280px;
     border: 1px solid #a8dcec;
     padding: 54px 16px;
