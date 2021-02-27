@@ -95,6 +95,7 @@ export default {
     height: 2px;
     background-color: white;
     margin-bottom: 10px;
+    z-index: 1100;
     &:nth-child(1) {
       top: 5px;
     }
@@ -110,7 +111,7 @@ export default {
     left: 0;
     bottom: 0;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
     width: 100vw;
     position: fixed;
     background-color: #f9bdbd;
