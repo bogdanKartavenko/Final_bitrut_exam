@@ -14,13 +14,13 @@
         <app-slider-comment></app-slider-comment>
       </div>
     </div>
-    <div class="testimony__wrapper-frame">
+    <!-- <div class="testimony__wrapper-frame">
       <img
         class="testimony__img-frame"
         src="@/assets/images/testimony_frame.png"
         alt=""
       />
-    </div>
+    </div> -->
   </div>
 </template>
 

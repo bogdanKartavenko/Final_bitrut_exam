@@ -12,19 +12,19 @@
       <div v-show="visible" class="nav__container">
         <nav class="nav__navigation">
           <ul class="nav__list">
-            <li>
+            <li class="nav__text">
               <span href="">Home</span>
             </li>
-            <li>
+            <li class="nav__text">
               <span href="">About</span>
             </li>
-            <li>
+            <li class="nav__text">
               <span href="">Work</span>
             </li>
-            <li>
+            <li class="nav__text">
               <span href="">Categories</span>
             </li>
-            <li>
+            <li class="nav__text">
               <span href="">Testimony</span>
             </li>
           </ul>
