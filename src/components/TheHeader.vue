@@ -17,7 +17,7 @@
           <li class="header__menu-text">How it works</li>
           <li class="header__menu-text">Cotegories</li>
           <li class="header__menu-text">Testimony</li>
-          <button id="myBtn" class="header__button-menu">SIGN UP</button>
+          <button v-on:click="onSubmit" id="myBtn" class="header__button-menu">SIGN UP</button>
         </ul>
       </div>
     </nav>
@@ -57,7 +57,13 @@ export default {
     AppBurgerMenu,
   },
   name: "TheHeader",
+  methods: {
+    onSubmit() {
+      alert("Please try again later");
+    },
+  },
 };
+
 </script>
 
 <style lang="scss">
@@ -112,9 +118,9 @@ export default {
     font-size: 16px;
     line-height: 22px;
     cursor: pointer;
+    transition: 0.2s;
     &:hover {
-      text-shadow: 1px 1px 1px #daa520;
-      color: #daa520;
+      border-bottom: solid 1px #daa520;
       transition: 0.2s;
     }
   }

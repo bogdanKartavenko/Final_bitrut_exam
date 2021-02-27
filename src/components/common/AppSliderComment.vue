@@ -91,7 +91,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .glide * {
   box-sizing: inherit;
 }
