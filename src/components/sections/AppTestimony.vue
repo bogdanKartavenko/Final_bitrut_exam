@@ -12,31 +12,6 @@
       </div>
       <div class="testimony__wrapper-card">
         <app-slider-comment></app-slider-comment>
-        <!-- <div class="testimony__card">
-          <div class="testimony__wrapper-text">
-            My experience with WOODIES is a complete success, from customed
-            furniture, range of product, modern design, purchasing experience,
-            the delivery and newsletter. Litterally everything is great. Thank
-            you!
-          </div>
-          <div class="testimony__wrapper-accaunt">
-            <img class="tistimony__img-account" src="@/assets/images/Mask_Group.png" alt="img" />
-            <div class="testimony__wrapper-name">
-              <div>Sandra Dewi</div>
-              <div>Jakarta Selatan</div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="testimony__wrapper-button">
-          <button class="testimony__button-left">
-            <div class="testimony__border-left"></div>
-            &#8592; Previous
-          </button>
-          <button class="testimony__button-right">
-            Next &#8594;
-            <div class="testimony__border-right"></div>
-          </button>
-        </div> -->
       </div>
     </div>
     <div class="testimony__wrapper-frame">
@@ -130,9 +105,16 @@ export default {
   &__wrapper-card {
     @include media($screen-tablet) {
       padding: 0px;
-      width: 384px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &__button-left {
     cursor: pointer;
