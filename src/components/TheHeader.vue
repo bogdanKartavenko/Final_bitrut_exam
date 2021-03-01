@@ -8,8 +8,8 @@
       />
     </div>
     <app-burger-menu></app-burger-menu>
-    <nav class="header__nav">
-      <AppLogo></AppLogo>
+    <nav class="header__nav animate__animated  animate__slideInDown">
+      <AppLogo />
       <div class="header__wrapper-menu">
         <ul class="header__menu">
           <li class="header__menu-text">Home</li>
@@ -17,29 +17,25 @@
           <li class="header__menu-text">How it works</li>
           <li class="header__menu-text">Cotegories</li>
           <li class="header__menu-text">Testimony</li>
-          <button v-on:click="onSubmit" id="myBtn" class="header__button-menu">SIGN UP</button>
+          <button
+            v-on:click="showPopupInfo"
+            id="myBtn"
+            class="header__button-menu"
+          >
+            SIGN UP
+          </button>
         </ul>
       </div>
     </nav>
+    <app-popup @closePopupInfo="closePopup" v-if="isPopupInfo" />
     <div class="header__wrapper">
-      <div class="header__box">
+      <div class="header__box animate__animated animate__fadeInLeftBig">
         <div class="header__subtitle">
           Are you lookong for <a class="header__subtitle--bold">woodden</a>
           <a class="header__subtitle--bold">furniture</a> for your place?
         </div>
         <div class="header__title">This is the Right Place</div>
         <AppButton class="header__button">Explore Furniture</AppButton>
-      </div>
-    </div>
-    <div id="navPopup" class="popup">
-      <div class="popup__body">
-        <div class="popup__content">
-          <a id="popupClose" class="popup__close">X</a>
-          <div class="popup__title">Login</div>
-          <input class="popup__input" type="login" placeholder="Username" />
-          <input class="popup__input" type="password" placeholder="Password" />
-          <button class="popup__button button">Done</button>
-        </div>
       </div>
     </div>
   </header>
@@ -49,21 +45,30 @@
 import AppBurgerMenu from "./common/AppBurgerMenu.vue";
 import AppButton from "./common/AppButton.vue";
 import AppLogo from "./common/AppLogo.vue";
+import AppPopup from "./common/AppPopup.vue";
 
 export default {
   components: {
     AppButton,
     AppLogo,
     AppBurgerMenu,
+    AppPopup,
   },
   name: "TheHeader",
+  data() {
+    return {
+      isPopupInfo: false,
+    };
+  },
   methods: {
-    onSubmit() {
-      alert("Please try again later");
+    showPopupInfo() {
+      this.isPopupInfo = true;
+    },
+    closePopup() {
+      this.isPopupInfo = false;
     },
   },
 };
-
 </script>
 
 <style lang="scss">
@@ -207,75 +212,6 @@ export default {
     }
     width: 175px;
     margin: 50px auto;
-  }
-}
-.popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  top: 0;
-  left: 0;
-  z-index: 1;
-  overflow: auto;
-  display: none;
-  &__input {
-    width: 100%;
-    padding: 0 20px;
-    margin-bottom: 10px;
-    background: #e9eff6;
-    line-height: 40px;
-    border-width: 0;
-    border-radius: 20px;
-  }
-  &__title {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
-  }
-  &:target {
-    opacity: 1;
-    visibility: visible;
-  }
-  &__body {
-    min-height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15px;
-  }
-  &__content {
-    background-color: #ffff;
-    color: #3e3f43;
-    max-width: 800px;
-    padding: 15px;
-    position: relative;
-    border: 1px solid #888;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation-direction: 0.4s;
-    border-radius: 5px;
-    border: 3px solid#daa520;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &__close {
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    &:hover,
-    &:focus {
-      color: #daa520;
-      text-decoration: none;
-      cursor: pointer;
-    }
   }
 }
 </style>
